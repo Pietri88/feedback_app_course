@@ -7,6 +7,7 @@ const FeedbackForm = () => {
         name: '',
         email: '',
         feedback: '',
+        rating: '',
 
     });
 
@@ -24,6 +25,8 @@ const FeedbackForm = () => {
         Imię: ${formData.name}
         Email: ${formData.email}
         Opinie: ${formData.feedback}
+        Ocena: ${formData.rating}
+    
         
         `;
     
@@ -35,6 +38,7 @@ const FeedbackForm = () => {
             name:'',
             email: '',
             feedback: '',
+            rating:'',
         });
         alert('Dziękujemy za cenną opinię');
 
@@ -75,9 +79,42 @@ const FeedbackForm = () => {
             value={formData.feedback}
             onChange={handleChange}
             ></textarea>
-            <button type="submit">Wyślij Opinię</button>
 
+            <div style={{display:'flex',gap:'10px',flexDirection:'column'}}>
+                    <span>Oceń nas:</span>
+                    <p><input
+                        type="radio"
+                        name="rating"
+                        value="1"
+                        onChange={handleChange}
+                    /> 1</p>
+                  <p>  <input
+                        type="radio"
+                        name="rating"
+                        value="2"
+                        onChange={handleChange}
+                    /> 2</p>
+                  <p>  <input
+                        type="radio"
+                        name="rating"
+                        value="3"
+                        onChange={handleChange}
+                    /> 3</p>
+                   <p> <input
+                        type="radio"
+                        name="rating"
+                        value="4"
+                        onChange={handleChange}
+                    /> 4</p>
+                    <p><input
+                        type="radio"
+                        name="rating"
+                        value="5"
+                        onChange={handleChange}
+                    /> 5</p>
+                </div>
 
+                <button type="submit">Wyślij Opinię</button>
       </form>
     </>
   );
